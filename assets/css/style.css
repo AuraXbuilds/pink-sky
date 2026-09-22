@@ -1116,7 +1116,7 @@ h1, h2, h3, h4 {
 .track__foot a { border-bottom: 1px solid currentColor; }
 .track__foot a:hover { color: var(--clay); }
 
-/* ----------------------------------------------------------- 23. journal */
+/* --------------------------------------------------------- 23. community */
 .posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); }
 .post__img { overflow: hidden; background: var(--oat); aspect-ratio: 10 / 7; }
 .post__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
