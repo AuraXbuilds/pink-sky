@@ -350,13 +350,24 @@ body.ps { background: var(--ps-cream); }
   .ps-foot__top { grid-template-columns: 1fr; }
   .ps-foot .brand-img img { width: min(15rem, 78vw); transform: none; }
   .ps-foot__links { transform: none; }
-  .ps-social { border-left: 0; padding-left: 0; justify-content: flex-start; height: auto; transform: none; gap: 2rem; }
+  .ps-foot__links { width: min(100%, 35rem); justify-self: center; text-align: center; gap: 0; }
+  .ps-foot__links li { border-bottom: 1px solid var(--ps-line); }
+  .ps-foot__links li:last-child { border-bottom: 0; }
+  .ps-foot__links a { display: block; padding: 1.05rem 0; font-size: 0.78rem; letter-spacing: 0.24em; }
+  .ps-social { border-left: 0; padding-left: 0; justify-content: center; height: auto; transform: none; gap: 2.5rem; }
+  .ps-social svg { width: 30px; height: 30px; }
+  .ps-foot__script { justify-content: center; }
+  .ps-foot__script img { width: min(15rem, 72vw); }
   .ps-band { padding-block: 2.8rem; }
   .ps-band__inner { flex-direction: column; align-items: flex-start; gap: 1.6rem; padding-inline: var(--pad); }
   .ps-band h2 { font-size: clamp(2.15rem, 10vw, 2.75rem); }
   .ps-band form { flex: 0 1 auto; width: 100%; }
   .ps-field { height: 4rem; padding-left: 1.2rem; }
   .ps-field button { padding-inline: 1.2rem; }
-  .ps-foot__bar { padding-block: 1.8rem 2.3rem; align-items: flex-start; }
-  .ps-foot__bar nav { width: 100%; justify-content: space-between; gap: 0.5rem; font-size: 0.61rem; }
+  .ps-foot__bar { position: relative; padding-block: 2.2rem 4.7rem; align-items: center; justify-content: center; text-align: center; }
+  .ps-foot__bar > span { font-size: 0.65rem; }
+  .ps-foot__bar nav { width: 100%; justify-content: center; gap: 0; font-size: 0.64rem; }
+  .ps-foot__bar nav a { display: inline-flex; align-items: center; }
+  .ps-foot__bar nav a + a::before { content: ""; width: 1px; height: 0.9rem; background: var(--ps-soft); margin: 0 1.15rem; }
+  .ps-foot__bar::after { content: ""; position: absolute; bottom: 1.9rem; left: 50%; width: 3.6rem; height: 0.7rem; transform: translateX(-50%); background: radial-gradient(circle, var(--ps-rose) 0 0.35rem, transparent 0.4rem) 0 50% / 1.2rem 0.7rem repeat-x; }
 }
