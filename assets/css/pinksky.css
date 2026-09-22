@@ -315,3 +315,48 @@ body.ps { background: var(--ps-cream); }
   .ps-social { transform: none; }
   .ps-band__inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ------------------------------------------------ mobile finishing pass */
+@media (max-width: 900px) {
+  .ps .nav--left { display: flex; }
+  .ps .nav--left > :not(.burger) { display: none; }
+  .ps .burger { display: block; }
+  .ps-hero { display: block; min-height: 0; height: auto; }
+  .ps-hero__body { position: relative; padding: 3.25rem var(--pad); }
+  .ps-hero__media { position: relative; inset: auto; height: min(82vw, 34rem); min-height: 0; }
+}
+@media (max-width: 640px) {
+  .ps .announce__inner { justify-content: center; }
+  .ps .nav--right { gap: 0.25rem; }
+  .ps .nav--right .icon-btn:nth-child(2) { display: none; }
+  .ps-hero__body { padding-block: 2.7rem 2.9rem; }
+  .ps-hero .ps-eyebrow { font-size: 0.67rem; }
+  .ps-hero__rule { margin-bottom: 1.7rem; }
+  .ps-hero__copy { font-size: 0.95rem; margin-bottom: 1.7rem; }
+  .ps-hero__note { right: 1.35rem; top: 22%; font-size: 0.61rem; }
+  .ps-shop { padding: 2.35rem var(--pad) 2.6rem; }
+  .ps-cats { gap: 0.6rem; }
+  .ps-cat { aspect-ratio: 1 / 1.08; }
+  .ps-cat span { left: 0.8rem; bottom: 0.75rem; font-size: 0.95rem; }
+  .ps-story__fig { min-height: 23rem; }
+  .ps-story__fig p { right: 1.4rem; font-size: 1.3rem; }
+  .ps-story__body { padding-block: 2.8rem; }
+  .ps-story__body h2 { font-size: clamp(2.5rem, 12vw, 3.35rem); }
+  .ps-values { grid-template-columns: 1fr; }
+  .ps-values > div { padding-block: 2.15rem; }
+  .ps-values svg { margin-bottom: 0.85rem; }
+  .ps-values > div + div::before { display: none; }
+  .ps-values > div + div { border-top: 1px solid var(--ps-line); }
+  .ps-foot__top { grid-template-columns: 1fr; }
+  .ps-foot .brand-img img { width: min(15rem, 78vw); transform: none; }
+  .ps-foot__links { transform: none; }
+  .ps-social { border-left: 0; padding-left: 0; justify-content: flex-start; height: auto; transform: none; gap: 2rem; }
+  .ps-band { padding-block: 2.8rem; }
+  .ps-band__inner { flex-direction: column; align-items: flex-start; gap: 1.6rem; padding-inline: var(--pad); }
+  .ps-band h2 { font-size: clamp(2.15rem, 10vw, 2.75rem); }
+  .ps-band form { flex: 0 1 auto; width: 100%; }
+  .ps-field { height: 4rem; padding-left: 1.2rem; }
+  .ps-field button { padding-inline: 1.2rem; }
+  .ps-foot__bar { padding-block: 1.8rem 2.3rem; align-items: flex-start; }
+  .ps-foot__bar nav { width: 100%; justify-content: space-between; gap: 0.5rem; font-size: 0.61rem; }
+}
