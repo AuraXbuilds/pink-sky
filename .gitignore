@@ -1,0 +1,17 @@
+# Publish only the homepage and its runtime assets.
+/*.html
+!/index.html
+/tools/
+
+# Keep only the homepage image set.
+/assets/img/*
+!/assets/img/logo.png
+!/assets/img/tagline-script.png
+!/assets/img/ps-hero-template-match.png
+!/assets/img/ps-tops.jpg
+!/assets/img/ps-bottoms-template-v2.png
+!/assets/img/ps-dresses-template-v2.png
+!/assets/img/ps-coords-template-v2.png
+!/assets/img/ps-story-template-v2.png
+!/assets/img/ps-slim-template-v2.png
+!/assets/img/ps-band.jpg
