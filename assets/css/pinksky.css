@@ -348,7 +348,8 @@ body.ps { background: var(--ps-cream); }
   .ps-values > div + div::before { display: none; }
   .ps-values > div + div { border-top: 1px solid var(--ps-line); }
   .ps-foot__top { grid-template-columns: 1fr; }
-  .ps-foot .brand-img img { width: min(15rem, 78vw); transform: none; }
+  .ps-foot .brand-img { text-align: center; }
+  .ps-foot .brand-img img { width: min(15rem, 78vw); margin-inline: auto; transform: none; }
   .ps-foot__links { transform: none; }
   .ps-foot__links { width: min(100%, 35rem); justify-self: center; text-align: center; gap: 0; }
   .ps-foot__links li { border-bottom: 1px solid var(--ps-line); }
