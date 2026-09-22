@@ -170,7 +170,7 @@
     if (total) total.textContent = inr(cartTotal());
 
     const ship = $('[data-cart-ship]');
-    if (ship) ship.textContent = cartTotal() >= 2999 || !cart.length ? 'Free' : inr(149);
+    if (ship) ship.textContent = cartTotal() >= 1999 || !cart.length ? 'Free' : inr(149);
   }
 
   /* ----------------------------------------------------------- wishlist */
