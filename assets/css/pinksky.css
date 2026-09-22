@@ -310,6 +310,8 @@ body.ps { background: var(--ps-cream); }
   .ps-values > div + div::before { display: none; }
   .ps-values > div + div { border-top: 1px solid var(--ps-line); }
   .ps-foot__top { grid-template-columns: 1fr; }
+  .ps-foot__links { transform: none; }
   .ps-social { border-left: 0; padding-left: 0; justify-content: flex-start; height: auto; }
+  .ps-social { transform: none; }
   .ps-band__inner { flex-direction: column; align-items: flex-start; }
 }
