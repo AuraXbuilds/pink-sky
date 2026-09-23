@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community — PINK SKY</title>
+<meta name="description" content="The Pink Sky Circle — a space to talk about clothes honestly. Ask, share, seek advice and tell us what you wish existed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/pinksky.css">
+<link rel="stylesheet" href="assets/css/community.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='9' cy='16' r='4' fill='%23C39A94'/><circle cx='16' cy='16' r='4' fill='%23C39A94'/><circle cx='23' cy='16' r='4' fill='%23C39A94'/></svg>">
+</head>
+<body class="ps">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ───────────────────────────────────────────── announcement -->
+<div class="announce">
+  <div class="announce__inner wrap">
+    <span>Free shipping on all orders above ₹1999</span>
+    <span>A kinder wardrobe for brighter tomorrows</span>
+  </div>
+</div>
+
+<!-- ───────────────────────────────────────────── header -->
+<header class="head" data-head>
+  <div class="head__inner wrap">
+    <nav class="nav nav--left" aria-label="Primary">
+      <button class="icon-btn burger" data-open-nav aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="nav__link" href="shop.html">Shop</a>
+      <a class="nav__link" href="shop.html?cat=new">New In</a>
+      <a class="nav__link" href="about.html">Our Story</a>
+      <a class="nav__link" href="community.html">Community</a>
+    </nav>
+
+    <a class="brand-img" href="index.html" aria-label="PINK SKY — clothing for your kind of world">
+      <img src="assets/img/logo.png" alt="PINK SKY" width="1024" height="342">
+    </a>
+
+    <nav class="nav nav--right" aria-label="Account and bag">
+      <a class="icon-btn" href="shop.html" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg>
+      </a>
+      <a class="icon-btn" href="contact.html#account" aria-label="Login or register" title="Login or register">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M4.8 20c.7-3.7 3.6-5.8 7.2-5.8s6.5 2.1 7.2 5.8" stroke-linecap="round"/></svg>
+      </a>
+      <button class="icon-btn" data-open-cart aria-label="Open bag">
+        <svg viewBox="0 0 24 24"><path d="M5.5 7.5h13l1 12.5h-15z"/><path d="M8.8 10V6.9a3.2 3.2 0 0 1 6.4 0V10" stroke-linecap="round"/></svg>
+        <span class="count" data-cart-count>0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────────────────────── hero -->
+  <section class="cm-hero">
+    <div class="cm-hero__body">
+      <i class="cm-hero__rule"></i>
+      <p class="cm-eyebrow">The Pink Sky Circle</p>
+      <h1>A space to talk about clothes — <em>honestly.</em></h1>
+      <p class="cm-hero__copy">Ask. Share. Rant. Seek advice. Tell us what you wish existed.<br>Different experiences. A kinder wardrobe.</p>
+      <div class="cm-hero__actions">
+        <a class="cm-btn" href="#conversations" data-cm-start aria-expanded="false" aria-controls="cm-compose">Start a conversation <svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cm-btn cm-btn--ghost" href="#how-it-works">How it works</a>
+      </div>
+    </div>
+    <div class="cm-hero__media">
+      <img src="assets/img/ps-slim-template-v2.png" alt="" aria-hidden="true" width="1536" height="864">
+      <p class="cm-hero__script">Real women<br>Real conversations<i></i></p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────────────────────── topic tabs -->
+  <div class="wrap">
+    <nav class="cm-tabs" aria-label="Conversation topics">
+      <button class="cm-tab is-on" data-cm-tab="all">All</button>
+      <button class="cm-tab" data-cm-tab="fit">Fit &amp; Sizing</button>
+      <button class="cm-tab" data-cm-tab="fabric">Fabric &amp; Comfort</button>
+      <button class="cm-tab" data-cm-tab="everyday">Everyday Wear</button>
+      <button class="cm-tab" data-cm-tab="workwear">Workwear</button>
+      <button class="cm-tab" data-cm-tab="dresses">Dresses</button>
+      <button class="cm-tab" data-cm-tab="styling">Styling</button>
+      <button class="cm-tab" data-cm-tab="wish">What I Wish Existed</button>
+    </nav>
+  </div>
+
+  <!-- ───────────────────────────────────────── feed + sidebar -->
+  <div class="wrap cm-layout">
+    <section id="conversations">
+      <div class="cm-head">
+        <h2>Recent conversations</h2>
+        <label class="cm-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg>
+          <input type="search" placeholder="Search conversations..." aria-label="Search conversations" data-cm-search>
+        </label>
+      </div>
+
+      <!-- composer: opens from either Start a conversation button -->
+      <form class="cm-compose" id="cm-compose" data-cm-compose hidden>
+        <div class="cm-compose__top">
+          <label class="cm-compose__topic">
+            <span>Topic</span>
+            <select data-cm-topic aria-label="Conversation topic"></select>
+          </label>
+          <label class="cm-compose__anon">
+            <input type="checkbox" checked data-cm-anon>
+            <span>Post anonymously</span>
+          </label>
+        </div>
+
+        <label class="cm-compose__name" data-cm-name-wrap hidden>
+          <span>Your name</span>
+          <input type="text" maxlength="40" placeholder="How should we call you?" data-cm-name>
+        </label>
+
+        <input class="cm-compose__title" type="text" maxlength="90" required
+               placeholder="What's on your mind?" aria-label="Conversation title" data-cm-title>
+        <textarea class="cm-compose__body" rows="4" maxlength="600" required
+                  placeholder="Share the detail — what you've tried, what you wish existed…"
+                  aria-label="Your message" data-cm-body></textarea>
+
+        <div class="cm-compose__foot">
+          <p class="cm-compose__note">Be kind. Demo space — your post is kept in this browser only.</p>
+          <div class="cm-compose__btns">
+            <button type="button" class="cm-btn cm-btn--ghost" data-cm-cancel>Cancel</button>
+            <button type="submit" class="cm-btn">Post</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="cm-feed" data-cm-feed></div>
+
+      <div class="cm-more" data-cm-more-wrap>
+        <button type="button" data-cm-more>Load more
+          <svg viewBox="0 0 12 14"><path d="M6 0v12M1.5 7.5L6 12l4.5-4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <aside class="cm-side">
+      <div class="cm-card">
+        <h3>You're in safe company.</h3>
+        <ul class="cm-safe">
+          <li><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M2.5 19c.6-3.1 3-4.9 6.5-4.9s5.9 1.8 6.5 4.9" stroke-linecap="round"/><path d="M16 6.2a3 3 0 0 1 0 5.6M18.5 4.6a5.6 5.6 0 0 1 0 8.8" stroke-linecap="round"/></svg><span>Real women, real experiences</span></li>
+          <li><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="1.6"/><path d="M8.3 10.5V7.8a3.7 3.7 0 0 1 7.4 0v2.7" stroke-linecap="round"/></svg><span>Post anonymously</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.4 12 20 12 20z" stroke-linejoin="round"/></svg><span>No judgement</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 19c0-7 4.5-11.5 14-12-.5 9.5-5 14-12 14z" stroke-linejoin="round"/><path d="M5 19c3-3.5 6.5-6 11-7.5" stroke-linecap="round"/></svg><span>A kinder community</span></li>
+        </ul>
+        <a class="cm-guidelines" href="guidelines.html">Community Guidelines <svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="cm-promo">
+        <div class="cm-promo__body">
+          <h3>Different wardrobes.<br>Same questions.</h3>
+          <p>A community for women who want clothing that fits their real lives.</p>
+        </div>
+        <div class="cm-promo__media">
+          <img src="assets/img/ps-story-template-v2.png" alt="" aria-hidden="true" width="1536" height="864" loading="lazy">
+        </div>
+      </div>
+
+      <div class="cm-card">
+        <h3>Trending topics</h3>
+        <ul class="cm-trend">
+          <li><a href="#"><b>1</b><span>Midi dresses — where to find?</span><svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="#"><b>2</b><span>Comfortable workwear</span><svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="#"><b>3</b><span>Functional pockets</span><svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="#"><b>4</b><span>Best fabrics for Indian weather</span><svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="#"><b>5</b><span>How do you style the same piece differently?</span><svg viewBox="0 0 22 8"><path d="M0 4h19M16 1l3 3-3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ───────────────────────────────────────── how it works -->
+  <section class="cm-how" id="how-it-works">
+    <div class="wrap">
+      <div class="cm-how__head">
+        <p class="cm-eyebrow">How it works</p>
+        <h2>Three small things keep this place <em>kind.</em></h2>
+      </div>
+
+      <ol class="cm-how__steps">
+        <li>
+          <b>01</b>
+          <h3>Start a conversation</h3>
+          <p>Ask a question, share what worked, or say what you wish existed. Post under your name or stay anonymous — the choice is yours every time.</p>
+        </li>
+        <li>
+          <b>02</b>
+          <h3>Give it a topic</h3>
+          <p>Fit, fabric, workwear, styling. A topic keeps your question findable, so the next woman looking for the same answer actually reaches it.</p>
+        </li>
+        <li>
+          <b>03</b>
+          <h3>Answer as you'd want to be answered</h3>
+          <p>Real experience over hot takes. No judgement, no selling, no perfect-wardrobe theatre. Like the replies that genuinely helped you.</p>
+        </li>
+      </ol>
+
+      <p class="cm-how__note">A demo space — conversations you post are kept in your browser and nowhere else. <a href="guidelines.html">Community guidelines</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- ───────────────────────────────────────────── footer -->
+<footer class="ps-foot">
+  <div class="wrap">
+    <div class="ps-foot__top">
+      <a class="brand-img" href="index.html" aria-label="PINK SKY">
+        <img src="assets/img/logo.png" alt="PINK SKY" width="1024" height="342">
+      </a>
+
+      <ul class="ps-foot__links">
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="ps-social">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.55 7.15a2.8 2.8 0 0 0-1.97-1.98C17.84 4.7 12 4.7 12 4.7s-5.84 0-7.58.47a2.8 2.8 0 0 0-1.97 1.98C2 8.9 2 12 2 12s0 3.1.45 4.85a2.8 2.8 0 0 0 1.97 1.98c1.74.47 7.58.47 7.58.47s5.84 0 7.58-.47a2.8 2.8 0 0 0 1.97-1.98C22 15.1 22 12 22 12s0-3.1-.45-4.85ZM10 15.15v-6.3L15.45 12 10 15.15Z"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.854 7.854 0 0 0 9.651 1.188a8.129 8.129 0 0 0-6.9 12.006L1.605 17.38l4.284-1.125a8.126 8.126 0 0 0 3.762.956h.003a8.1 8.1 0 0 0 8.126-8.105 8.12 8.12 0 0 0-4.179-6.78Zm-3.95 13.514a6.74 6.74 0 0 1-3.44-.94l-.247-.147-2.542.668.678-2.477-.16-.254a6.755 6.755 0 1 1 5.711 3.15Zm3.71-5.064c-.203-.102-1.204-.594-1.391-.662-.187-.068-.323-.102-.458.102-.136.203-.526.662-.645.797-.119.136-.238.153-.441.051-.203-.102-.858-.316-1.635-1.008-.604-.538-1.012-1.203-1.131-1.406-.119-.204-.013-.314.089-.415.092-.091.204-.237.306-.356.102-.119.135-.204.203-.34.068-.135.034-.254-.017-.356-.051-.102-.458-1.102-.628-1.509-.165-.397-.332-.343-.458-.349l-.39-.007a.748.748 0 0 0-.543.254c-.187.204-.713.696-.713 1.696s.73 1.967.831 2.103c.102.135 1.435 2.19 3.477 3.071.486.209.865.334 1.161.428.488.155.932.133 1.283.081.391-.058 1.204-.492 1.374-.967.17-.475.17-.882.119-.967-.051-.085-.187-.136-.39-.238Z" transform="translate(-1 -1) scale(.89)"/></svg></a>
+      </div>
+
+      <div class="ps-foot__script">
+        <img src="assets/img/tagline-script.png" alt="a different sky, together." width="1925" height="817" loading="lazy">
+      </div>
+    </div>
+
+    <div class="ps-foot__bar">
+      <span>© 2026 PINK SKY. ALL RIGHTS RESERVED.</span>
+      <nav aria-label="Legal">
+        <a href="contact.html#faq">Privacy</a>
+        <a href="contact.html#faq">Terms</a>
+        <a href="track.html">Shipping</a>
+        <a href="contact.html#faq">Returns</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ───────────────────────────────────────────── mobile nav -->
+<div class="mnav" data-mnav aria-hidden="true">
+  <div class="mnav__top">
+    <span class="brand-img"><img src="assets/img/logo.png" alt="PINK SKY" width="1024" height="342"></span>
+    <button class="icon-btn" data-close-nav aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="mnav__body">
+    <a href="shop.html?cat=new">New In</a>
+    <a href="shop.html?cat=separates">Tops</a>
+    <a href="shop.html?cat=separates">Bottoms</a>
+    <a href="shop.html?cat=dresses">Dresses</a>
+    <a href="shop.html?cat=kurtas">Co-ords</a>
+    <a href="shop.html?cat=outerwear">Outerwear</a>
+    <a href="shop.html?cat=sale" style="color:var(--sale)">Sale</a>
+    <div class="mnav__meta">
+      <a href="track.html">Track your order</a>
+      <a href="contact.html#account">Login / Register</a>
+      <a href="about.html">Our story</a>
+      <a href="community.html">Community</a>
+      <a href="contact.html#contact">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- ───────────────────────────────────────────── cart -->
+<div class="scrim" data-scrim></div>
+<aside class="cart" data-cart aria-hidden="true" aria-label="Shopping bag">
+  <div class="cart__head">
+    <h2>Your bag (<span data-cart-count>0</span>)</h2>
+    <button class="icon-btn" data-close-cart aria-label="Close bag">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="cart__items" data-cart-items></div>
+  <div class="cart__foot">
+    <div class="cart__line"><span>Subtotal</span><strong data-cart-total>₹0</strong></div>
+    <div class="cart__line"><span>Shipping</span><span data-cart-ship>Free</span></div>
+    <button class="btn btn--block" data-checkout>Proceed to checkout</button>
+    <p class="cart__note">Taxes included. Demo store — no payment is taken.</p>
+  </div>
+</aside>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/community.js"></script>
+<script>
+  const publishedPages = /^(?:index|shop|community|guidelines)\.html(?:[?#].*)?$/i;
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    if (href && !href.startsWith('#') && !publishedPages.test(href)) {
+      link.removeAttribute('href');
+      link.setAttribute('aria-disabled', 'true');
+      link.addEventListener('click', (event) => event.preventDefault());
+    }
+  });
+</script>
+</body>
+</html>

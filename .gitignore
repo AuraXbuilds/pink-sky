@@ -1,6 +1,9 @@
-# Publish only the homepage and its runtime assets.
+# Publish the homepage and the requested Shop and Community pages.
 /*.html
 !/index.html
+!/shop.html
+!/community.html
+!/guidelines.html
 /tools/
 
 # Keep only the homepage image set.
@@ -15,3 +18,11 @@
 !/assets/img/ps-story-template-v2.png
 !/assets/img/ps-slim-template-v2.png
 !/assets/img/ps-band.jpg
+!/assets/img/ps-shop-banner-clean.png
+!/assets/img/ps-same-women-wordmark.png
+!/assets/img/ps-bottoms.jpg
+!/assets/img/ps-dresses.jpg
+!/assets/img/ps-coords.jpg
+!/assets/img/ps-outerwear.jpg
+!/assets/img/p-*.jpg
+!/assets/img/det-*.jpg

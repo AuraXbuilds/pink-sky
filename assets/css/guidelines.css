@@ -1,0 +1,147 @@
+/* =========================================================================
+   PINK SKY — community guidelines
+   A quiet reading page: banner, five rules, a belongs/doesn't pair,
+   anonymity prose, moderation steps and a way back to the Circle.
+   Loads after community.css and reuses its eyebrow and button styles.
+   ========================================================================= */
+
+/* --------------------------------------------------------------- banner */
+.gd-hero {
+  background: var(--ps-panel);
+  padding-block: clamp(2.2rem, 4.5vw, 3.8rem);
+}
+.gd-hero h1 {
+  margin: 0 0 1rem;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.02; letter-spacing: -0.005em;
+  color: var(--ps-ink);
+}
+.gd-hero h1 em { font-style: italic; color: var(--ps-rose); }
+.gd-hero__lead {
+  margin: 0; max-width: 46ch;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+  line-height: 1.6; color: var(--ps-soft);
+}
+.gd-hero__meta {
+  margin: clamp(1.2rem, 2.4vw, 1.8rem) 0 0;
+  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #8B7F73;
+}
+
+/* -------------------------------------------------------------- sections */
+.gd-section { padding-block: clamp(2.4rem, 5vw, 4rem); }
+.gd-section__head { max-width: 40rem; margin-bottom: clamp(1.6rem, 3vw, 2.4rem); }
+.gd-section__head h2,
+.gd-fit h2,
+.gd-end h2 {
+  margin: 0;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+  line-height: 1.18; color: var(--ps-ink);
+}
+
+/* ------------------------------------------------------------ five rules */
+.gd-rules {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 2.6vw, 2.6rem);
+  counter-reset: none;
+}
+.gd-rules li {
+  border-top: 1px solid var(--ps-line);
+  padding-top: clamp(0.9rem, 1.6vw, 1.2rem);
+}
+.gd-rules b {
+  display: block; margin-bottom: 0.65rem;
+  font-family: var(--body); font-weight: 500;
+  font-size: 0.68rem; letter-spacing: 0.22em; color: var(--ps-rose);
+}
+.gd-rules h3 {
+  margin: 0 0 0.5rem;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(1.08rem, 1.35vw, 1.3rem);
+  line-height: 1.25; color: var(--ps-ink);
+}
+.gd-rules p,
+.gd-list li,
+.gd-prose p,
+.gd-steps p {
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  line-height: 1.62; color: var(--ps-soft);
+}
+.gd-rules p { margin: 0; }
+
+/* -------------------------------------------------- belongs / taken down */
+.gd-fit {
+  background: var(--ps-panel);
+  padding-block: clamp(2.4rem, 5vw, 4rem);
+}
+.gd-fit__grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.8rem, 4vw, 4rem);
+}
+.gd-list ul { list-style: none; margin: 1.3rem 0 0; padding: 0; display: grid; gap: 0.85rem; }
+.gd-list li {
+  position: relative;
+  padding-left: 1.9rem;
+}
+/* a tick for what belongs, a cross for what does not */
+.gd-list li::before {
+  position: absolute; left: 0; top: 0.1em;
+  font-family: var(--body); font-size: 0.9rem; line-height: 1.5;
+}
+.gd-list--yes li::before { content: "✓"; color: #7E8C6A; }
+.gd-list--no li::before { content: "✕"; color: var(--ps-rose); }
+
+/* -------------------------------------------------------------- prose */
+.gd-prose { max-width: 56ch; }
+.gd-prose p { margin: 0 0 1.1rem; }
+.gd-prose p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------- moderation */
+.gd-mod { padding-block: clamp(2.4rem, 5vw, 4rem); border-top: 1px solid var(--ps-line); }
+.gd-steps {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 3rem);
+}
+.gd-steps > div { border-left: 1px solid var(--ps-line); padding-left: clamp(1rem, 1.6vw, 1.4rem); }
+.gd-steps b {
+  display: block; margin-bottom: 0.55rem;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem); color: var(--ps-ink);
+}
+.gd-steps p { margin: 0; }
+.gd-mod__note {
+  margin: clamp(1.8rem, 3vw, 2.4rem) 0 0;
+  font-size: 0.8rem; color: var(--ps-soft);
+}
+
+/* ------------------------------------------------------------- closing */
+.gd-end {
+  padding-block: clamp(2.6rem, 5vw, 4.2rem);
+  border-top: 1px solid var(--ps-line);
+  text-align: center;
+}
+.gd-end p {
+  margin: 0.9rem auto 0; max-width: 44ch;
+  font-family: var(--ps-serif); font-weight: 500;
+  font-size: clamp(1rem, 1.15vw, 1.15rem); line-height: 1.6; color: var(--ps-soft);
+}
+.gd-end__actions {
+  margin-top: clamp(1.4rem, 2.6vw, 2rem);
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem;
+}
+
+/* ---------------------------------------------------------- responsive */
+@media (max-width: 900px) {
+  .gd-rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gd-steps { grid-template-columns: 1fr; }
+  .gd-steps > div { border-left: 0; border-top: 1px solid var(--ps-line); padding-left: 0; padding-top: 1rem; }
+}
+@media (max-width: 700px) {
+  .gd-rules { grid-template-columns: 1fr; }
+  .gd-fit__grid { grid-template-columns: 1fr; }
+}

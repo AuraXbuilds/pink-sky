@@ -80,7 +80,7 @@ body.ps { background: var(--ps-cream); }
   transform-origin: left center;
 }
 .ps-hero h1 em { font-style: italic; color: var(--ps-rose); }
-.ps-hero__copy { margin: 0 0 2.25rem; max-width: 39ch; color: var(--ps-soft); font-size: clamp(0.95rem, 1.08vw, 1.1rem); line-height: 1.55; }
+.ps-hero__copy { margin: 0 0 2.25rem; max-width: 39ch; color: var(--ps-soft); font-family: var(--ps-serif); font-size: clamp(0.95rem, 1.08vw, 1.1rem); font-weight: 500; line-height: 1.55; }
 
 .ps-btn {
   align-self: flex-start;

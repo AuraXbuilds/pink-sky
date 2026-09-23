@@ -493,6 +493,141 @@
     renderGrid('[data-related]', related);
   }
 
+  /* The home page links with the original category slugs; map them onto the
+     current ids so those links land on a populated grid. */
+  const CAT_ALIAS = {
+    separates: 'tops', kurtas: 'coords', accessories: 'loungewear', sarees: 'dresses',
+  };
+  const resolveCat = (c) => CAT_ALIAS[c] || c;
+
+  /* ----------------------------------------------------- page: shop grid */
+  function shopGrid() {
+    const grid = $('[data-sh-grid]');
+    if (!grid) return;
+
+    const PER_PAGE = 8;
+    const params = new URLSearchParams(location.search);
+    let activeCat = resolveCat(params.get('cat') || 'all');
+    let sortBy = 'featured';
+    let shown = PER_PAGE;
+
+    const countEl = $('[data-sh-count]');
+    const moreBtn = $('[data-sh-more]');
+    const moreWrap = $('.sh-more');
+    const allCard = $('.sh-cat--all');
+    const allTotal = $('[data-sh-total]');
+    const crumbs = $('[data-sh-crumbs]');
+
+    function shCard(p) {
+      const tag = p.tag === 'sale' ? '<span class="sh-tag sh-tag--sale">Sale</span>'
+                : p.tag === 'new'  ? '<span class="sh-tag">New</span>' : '';
+      const price = p.was
+        ? `<del>₹ ${p.was.toLocaleString('en-IN')}</del><ins>₹ ${p.price.toLocaleString('en-IN')}</ins>`
+        : '₹ ' + p.price.toLocaleString('en-IN');
+      const dots = p.colors.map((c) => `<i style="background:${SHADES[c] || '#ccc'}" title="${c}"></i>`).join('');
+      const liked = wish.includes(p.id) ? ' is-on' : '';
+
+      return `
+        <article class="sh-card" data-reveal>
+          <div class="sh-card__frame">
+            <a href="product.html?id=${p.id}" aria-label="${p.name}">
+              <img src="assets/img/${p.img}.jpg" alt="${p.name}" loading="lazy" width="800" height="1000">
+            </a>
+            ${tag}
+            <button class="sh-quick" data-add="${p.id}">Quick add</button>
+            <button class="sh-wish${liked}" data-wish="${p.id}"
+                    title="${liked ? 'Remove from wishlist' : 'Add to wishlist'}"
+                    aria-label="${liked ? 'Remove' : 'Add'} ${p.name} ${liked ? 'from' : 'to'} wishlist"
+                    aria-pressed="${liked ? 'true' : 'false'}">
+              <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.6-7-9.2A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.8C19 15.4 12 20 12 20z" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="sh-card__body">
+            <a class="sh-card__name" href="product.html?id=${p.id}">${p.name}</a>
+            <span class="sh-card__price">${price}</span>
+            <span class="sh-dots">${dots}</span>
+          </div>
+        </article>`;
+    }
+
+    function filtered() {
+      let list = activeCat === 'all' ? PRODUCTS.slice()
+        : activeCat === 'sale' ? PRODUCTS.filter((p) => p.was)
+        : activeCat === 'new'  ? PRODUCTS.filter((p) => p.tag === 'new')
+        : PRODUCTS.filter((p) => p.cat === activeCat);
+
+      if (sortBy === 'low')        list.sort((a, b) => a.price - b.price);
+      else if (sortBy === 'high')  list.sort((a, b) => b.price - a.price);
+      else if (sortBy === 'new')   list.sort((a, b) => (b.tag === 'new') - (a.tag === 'new'));
+      else if (sortBy === 'loved') list.sort((a, b) => b.sold - a.sold);
+      return list;
+    }
+
+    function render() {
+      const list = filtered();
+      const page = list.slice(0, shown);
+
+      grid.innerHTML = page.length
+        ? page.map(shCard).join('')
+        : '<div class="sh-empty"><h3>Nothing here yet</h3><p>Try another edit — this one is still being cut and sewn.</p></div>';
+      observeReveals(grid);
+
+      const label = activeCat === 'all' ? 'All Products'
+        : activeCat === 'sale' ? 'Sale'
+        : activeCat === 'new'  ? 'New In'
+        : (CATEGORIES.find((c) => c.id === activeCat) || {}).label || 'Products';
+      if (countEl) countEl.textContent = `${label} (${list.length})`;
+
+      // breadcrumb: Shop stays as the way back to everything
+      if (crumbs) {
+        crumbs.innerHTML = activeCat === 'all'
+          ? '<a href="index.html">Home</a> <i>&rsaquo;</i> <span>Shop</span>'
+          : `<a href="index.html">Home</a> <i>&rsaquo;</i> <a href="shop.html" data-sh-all>Shop</a> <i>&rsaquo;</i> <span>${label}</span>`;
+      }
+
+      // hide the button once everything in the current filter is on screen
+      if (moreWrap) moreWrap.style.display = shown >= list.length ? 'none' : 'flex';
+
+      $$('[data-sh-cat]').forEach((a) => a.classList.toggle('is-on', a.dataset.shCat === activeCat));
+
+      if (allCard) allCard.classList.toggle('is-on', activeCat === 'all');
+    }
+
+    function setCat(cat) {
+      activeCat = cat;
+      shown = PER_PAGE;
+      const url = new URL(location.href);
+      if (activeCat === 'all') url.searchParams.delete('cat');
+      else url.searchParams.set('cat', activeCat);
+      history.replaceState(null, '', url);
+      render();
+    }
+
+    $$('[data-sh-cat]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        setCat(a.dataset.shCat === activeCat ? 'all' : a.dataset.shCat);
+      });
+    });
+
+    // delegated so the rebuilt breadcrumb link keeps working too
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('[data-sh-all]');
+      if (!a) return;
+      e.preventDefault();
+      setCat('all');
+    });
+
+    const sortSel = $('[data-sh-sort]');
+    if (sortSel) sortSel.addEventListener('change', () => { sortBy = sortSel.value; shown = PER_PAGE; render(); });
+
+    if (moreBtn) moreBtn.addEventListener('click', () => { shown += PER_PAGE; render(); });
+
+    if (allTotal) allTotal.textContent = PRODUCTS.length + ' pieces';
+
+    render();
+  }
+
   /* --------------------------------------------------------- hero slider */
   const HERO_SLIDES = [
     {
@@ -682,16 +817,30 @@
     }
 
     heroSlider();
+    shopGrid();
     shopPage();
     productPage();
     trackPage();
     observeReveals(document);
 
-    // mark the current page in the nav
-    const here = location.pathname.split('/').pop() || 'index.html';
+    // Mark the current page in the nav. Compare without the extension so this
+    // works whether the host serves /community.html or /community, and include
+    // the category so shop.html and shop.html?cat=new don't both light up.
+    const slug = (p) => (p.split('?')[0].split('#')[0].split('/').pop() || 'index').replace(/\.html$/, '') || 'index';
+    const cat = (p) => (p.split('#')[0].split('?')[1] || '').split('&')
+      .reduce((v, part) => (part.split('=')[0] === 'cat' ? part.split('=')[1] || '' : v), '');
+    const hereSlug = slug(location.pathname);
+    const hereCat = cat(location.search);
+    const isCurrent = (href) => {
+      if (slug(href) !== hereSlug) return false;
+      const c = cat(href);
+      // A category link only matches its own category; the plain Shop link
+      // stays marked while browsing the shop, except on the New In view.
+      return c ? c === hereCat : hereCat !== 'new';
+    };
     $$('.nav__link, .mnav__body a').forEach((a) => {
-      const href = (a.getAttribute('href') || '').split('?')[0];
-      if (href === here) a.setAttribute('aria-current', 'page');
+      const href = a.getAttribute('href');
+      if (href && isCurrent(href)) a.setAttribute('aria-current', 'page');
     });
   }
 

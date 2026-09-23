@@ -299,17 +299,18 @@
 <script src="assets/js/data.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
-  // This Vercel build intentionally ships only the homepage. Prevent links
-  // intended for the unpublished inner pages from navigating away.
+  // Allow the published pages; keep links to unfinished pages inactive.
+  const canNavigateFromHome = (href) => /^(shop\.html|community\.html)(?:[?#].*)?$/.test(href);
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href]');
-    if (link && !(link.getAttribute('href') || '').startsWith('#')) {
+    const href = link?.getAttribute('href') || '';
+    if (link && !href.startsWith('#') && !canNavigateFromHome(href)) {
       event.preventDefault();
     }
   });
   document.querySelectorAll('a[href]').forEach((link) => {
     const href = link.getAttribute('href') || '';
-    if (href && !href.startsWith('#')) {
+    if (href && !href.startsWith('#') && !canNavigateFromHome(href)) {
       link.removeAttribute('href');
       link.setAttribute('aria-disabled', 'true');
     }
